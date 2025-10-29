@@ -1,0 +1,41 @@
+@model CarCollection.Web.Models.Car
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>@Model.Make @Model.Model (@Model.Year)</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    @if (Model.Photos != null && Model.Photos.Any())
+    {
+        <div class="mb-2">
+          <img src="@Model.Photos.First().FilePath" class="img-fluid img-thumbnail" />
+        </div>
+        <div class="d-flex gap-2">
+        @foreach (var p in Model.Photos)
+        {
+            <img src="@p.FilePath" style="width:80px;height:60px;object-fit:cover" class="img-thumbnail" />
+        }
+        </div>
+    }
+    else
+    {
+        <img src="/images/no-image.png" class="img-fluid img-thumbnail" />
+    }
+  </div>
+
+  <div class="col-md-8">
+    <table class="table">
+      <tr><th>Make</th><td>@Model.Make</td></tr>
+      <tr><th>Model</th><td>@Model.Model</td></tr>
+      <tr><th>Year</th><td>@Model.Year</td></tr>
+      <tr><th>VIN</th><td>@(Model.VIN ?? "-")</td></tr>
+      <tr><th>Color</th><td>@(Model.Color ?? "-")</td></tr>
+      <tr><th>Mileage</th><td>@(Model.Mileage?.ToString() ?? "-")</td></tr>
+      <tr><th>Purchase Date</th><td>@(Model.PurchaseDate?.ToString("yyyy-MM-dd") ?? "-")</td></tr>
+      <tr><th>Notes</th><td>@(Model.Notes ?? "-")</td></tr>
+    </table>
+    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+  </div>
+</div>

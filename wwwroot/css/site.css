@@ -1,0 +1,195 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #4b5563;
+  --accent-color: #3b82f6;
+  --background-color: #809bb6;
+  --text-color: #1f2937;
+  --border-radius: 0.5rem;
+  --transition: all 0.3s ease;
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Navigation and header styles */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: rgb(110, 161, 188);
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.navbar-brand:hover {
+  color: var(--accent-color);
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+/* Button styles */
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(37, 140, 251, 0.25);
+}
+
+/* Card and content styles */
+.card {
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+/* Form styles */
+.form-control {
+  border-radius: var(--border-radius);
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--accent-color);
+}
+
+.form-floating > .form-control-plaintext::placeholder, 
+.form-floating > .form-control::placeholder {
+  color: var(--secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, 
+.form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* Image styles */
+.img-thumbnail {
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.02);
+}
+
+/* Table styles */
+/* Custom table styling */
+.table {
+    width: 100%;
+    max-width: 100%;
+    background-color: #4f5e6c; /* light gray background */
+    border-radius: 8px;
+    overflow: hidden;
+}
+/* Make rows bigger (normal height) */
+.table td, .table th {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+/* Optional: Hover effect */
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* slightly darker hover */
+}
+
+/* Adjust border color */
+.table > :not(caption) > * > * {
+    border-color: #dee2e6;
+}
+
+/* Optional: Darker theme (if you want darker background instead) */
+/*
+.table {
+    background-color: #343a40;
+    color: #fff;
+}
+.table-hover tbody tr:hover {
+    background-color: #495057;
+}
+
+.table thead th {
+  background-color: var(--background-color);
+  border-bottom: 2px solid #8790a0;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+*/
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer styles */
+footer {
+  background-color: rgb(210, 89, 89);
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.car-table {
+    background-color: #9ba5b0;
+    border-radius: 10px;
+}

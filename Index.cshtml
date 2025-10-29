@@ -1,0 +1,57 @@
+@model IEnumerable<CarCollection.Web.Models.Car>
+@{
+    ViewData["Title"] = "My Cars";
+}
+<h2>My Car Collection</h2>
+
+<form method="get" class="row g-2 mb-3">
+  <div class="col-sm-4">
+    <input name="search" class="form-control" placeholder="Search by make, model, VIN" value="@Context.Request.Query["search"]" />
+  </div>
+  <div class="col-sm-2">
+    <input name="year" type="number" class="form-control" placeholder="Year" value="@Context.Request.Query["year"]" />
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary">Filter</button>
+    <a class="btn btn-secondary" asp-action="Index">Clear</a>
+  </div>
+  <div class="col text-end">
+    <a class="btn btn-success" asp-action="Create">+ Add Car</a>
+  </div>
+</form>
+
+<table class="table table-hover car-table">
+  <thead class="table-light">
+    <tr>
+      <th>Photo</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Mileage</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach(var c in Model)
+  {
+    <tr>
+      <td style="width:120px">
+        @{
+            var photo = c.Photos?.FirstOrDefault(p => p.IsPrimary) ?? c.Photos?.FirstOrDefault();
+            var src = photo != null ? photo.FilePath : "/images/no-image.png";
+        }
+        <img src="@src" alt="photo" class="img-thumbnail" style="max-width:100px; max-height:70px" />
+      </td>
+      <td>@c.Make</td>
+      <td>@c.Model</td>
+      <td>@c.Year</td>
+      <td>@(c.Mileage?.ToString() ?? "-")</td>
+      <td class="text-end">
+        <a class="btn btn-sm btn-outline-primary" asp-action="Details" asp-route-id="@c.Id">Details</a>
+        <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@c.Id">Edit</a>
+        <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@c.Id">Delete</a>
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>
