@@ -1,20 +1,20 @@
-# CarCollection
+# Car Collection Management System
 
-A simple web app built with **ASP.NET Core MVC** to manage and display your car collection.
+A web-based ASP.NET Core MVC app to manage your car collection. Add, edit, delete, and view car details with photos, search, and filters using Entity Framework Core + SQLite and Bootstrap UI.
 
-## ✨ Features
-- Add, edit, delete, and view cars  
-- Upload and show car images  
-- Filter and search by make, model, or year  
-- Responsive Bootstrap UI  
-- Uses **Entity Framework Core** + **SQLite**
+## ⚙️ Installation
+1. Install [.NET SDK 8.0+](https://dotnet.microsoft.com/en-us/download)  
+2. Clone repo → `git clone https://github.com/your-username/CarCollection.git`  
+3. Open folder → `cd CarCollection/CarCollection.Web`  
+4. Run → `dotnet restore` → `dotnet ef database update`  
+5. Start → `dotnet run`
 
-## ⚙️ Setup
-1. Clone the repo  
-2. Run `dotnet restore`  
-3. Run `dotnet ef database update`  
-4. Start with `dotnet run`  
-5. Open `https://localhost:5001`
+## ▶️ How to Run
+Open browser → `https://localhost:5001`  
+Use interface to manage cars (add, edit, delete, view).
 
-## 🧰 Tech
-ASP.NET Core MVC • EF Core • Bootstrap • C# • SQLite
+## 🧰 Tech Stack
+ASP.NET Core MVC • EF Core • SQLite • Bootstrap 5 • C#
+
+## 👩‍💻 Author
+**Drashti Hingol** 
