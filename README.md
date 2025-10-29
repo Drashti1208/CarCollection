@@ -18,7 +18,3 @@ A simple web app built with **ASP.NET Core MVC** to manage and display your car 
 
 ## 🧰 Tech
 ASP.NET Core MVC • EF Core • Bootstrap • C# • SQLite
-
-## 👩‍💻 Author
-**Drashti Hingol**  
-Asha M. Tarsadia Institute of Computer Science and Technology
